@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.css"
+    />
+    <link rel="stylesheet" href="LoginIndexStyle.css" />
+  </head>
+  <body>
+    <div class="auth-container">
+      <div class="auth-header">
+        <h2 id="formTitle">Login</h2>
+      </div>
+
+      <div class="auth-body">
+        <div class="error" id="errorMsg"></div>
+
+        <!-- Login Form -->
+        <form id="loginForm">
+          <div class="form-group">
+            <label>Email</label>
+            <input type="email" id="loginEmail" required />
+          </div>
+
+          <div class="form-group">
+            <label>Password</label>
+            <input type="password" id="loginPassword" required />
+          </div>
+
+          <button type="submit" class="btn">Login</button>
+
+          <div class="switch">
+            Don’t have an account?
+            <a onclick="showRegister()">Register</a>
+          </div>
+        </form>
+
+        <!-- Register Form -->
+        <form id="registerForm" class="hidden">
+          <div class="form-group">
+            <label>First Name</label>
+            <input type="text" id="regFirstName" required />
+          </div>
+          <div class="form-group">
+            <label>Middle Name</label>
+            <input type="text" id="regMiddleName" />
+          </div>
+
+          <div class="form-group">
+            <label>Last Name</label>
+            <input type="text" id="regLastName" />
+          </div>
+
+          <div class="form-group">
+            <label>Email</label>
+            <input type="email" id="regEmail" required />
+          </div>
+
+          <div class="form-group">
+            <label>Password</label>
+            <input type="password" id="regPassword" required />
+          </div>
+
+          <div class="form-group">
+            <label>Confirm Password</label>
+            <input type="password" id="regConfirmPassword" required />
+          </div>
+
+          <button type="submit" class="btn">Register</button>
+
+          <div class="switch">
+            Already have an account?
+            <a onclick="showLogin()">Login</a>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <footer>
+      <p>&copy; 2082 Developed By Sailesh Maharjan</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.js"></script>
+    <script src="LoginIndexScript.js"></script>
+  </body>
+</html>

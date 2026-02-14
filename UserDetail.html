@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>User Detail</title>
+  </head>
+  <body>
+    <div id="userDetailContainer"></div>
+
+    <script src="fetchWrapper.js"></script>
+    <script type="module">
+          try{
+       const responseObj = await fetchWrapper("http://localhost:5116/api/Authentication/me",{
+        method : "GET",
+       });
+
+       if(!responseObj.message) {
+          throw new Error(responseObj.message || "Failed to fetch user details");
+       }
+       document.querySelector("#userDetailContainer").innerHTML = JSON.stringify(responseObj.data, null, 2);
+      }
+      catch(error){
+          console.error("Error fetching user details:", error);
+          document.getElementById("userDetailContainer").innerText = "Error fetching user details: " + error.message;
+      }
+    </script>
+  </body>
+</html>
