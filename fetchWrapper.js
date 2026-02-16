@@ -1,12 +1,15 @@
 async function refreshAccessToken() {
   try {
-    const responseObj = await fetch("http://localhost:5116/api/refresh-token", {
-      method: "POST",
-      credentials: "include",
-      headers: {
-        "Content-Type": "application/json",
-      }
-    });
+    const responseObj = await fetch(
+      "https://jwtauthenticationbackend-production.up.railway.app/api/refresh-token",
+      {
+        method: "POST",
+        credentials: "include",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      },
+    );
     const javascriptObj = await responseObj.json();
 
     if (!responseObj.ok) {
@@ -24,19 +27,22 @@ async function refreshAccessToken() {
 async function revokeToken() {
   try {
     localStorage.removeItem("accessToken");
-    const responseObj = await fetch("http://localhost:5116/api/revoke-token", {
-      method: "POST",
-      credentials: "include",
-      headers: {
-        "Content-Type": "application/json",
-      }
-    });
+    const responseObj = await fetch(
+      "https://jwtauthenticationbackend-production.up.railway.app/api/revoke-token",
+      {
+        method: "POST",
+        credentials: "include",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      },
+    );
     const javascriptResponseObj = await responseObj.json();
     if (!responseObj.ok) {
       throw new Error(javascriptResponseObj.message);
     }
     console.log(javascriptResponseObj.message);
-    window.location.href = "/LoginIndex.html";
+    window.location.href = "/index.html";
   } catch (err) {
     console.error("error revoking token", err.message);
   }
@@ -64,7 +70,7 @@ async function fetchWrapper(url, options = {}, retry = true) {
         console.log("Token refreshed. Retrying original request...");
         return fetchWrapper(url, options, false); // retry once
       } else {
-         await revokeToken();
+        await revokeToken();
         throw new Error("Session expired. Please login again.");
       }
     }

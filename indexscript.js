@@ -30,7 +30,7 @@ loginForm.addEventListener("submit", async function (e) {
     }
 
     const responseObj = await fetch(
-      "http://localhost:5116/api/Authentication/login",
+      "https://jwtauthenticationbackend-production.up.railway.app/api/Authentication/login",
       {
         method: "POST",
         credentials: "include",
@@ -92,7 +92,7 @@ registerForm.addEventListener("submit", function (e) {
     return;
   }
 
-  fetch("http://localhost:5116/api/Authentication/register", {
+  fetch("https://jwtauthenticationbackend-production.up.railway.app/api/Authentication/register", {
     method: "POST",
     credentials: "include",
     headers: {

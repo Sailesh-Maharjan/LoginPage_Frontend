@@ -1,94 +1,98 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <title>Developed By Sailesh Maharjan</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <!-- Bootstrap 5 CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
 
     <style>
-        body {
-            overflow-x: hidden;
-        }
+      body {
+        overflow-x: hidden;
+      }
+      #sidebar {
+        min-height: 100vh;
+        width: 200px;
+        background-color: #343a40;
+        color: white;
+        padding-top: 1rem;
+      }
+      #sidebar a {
+        color: white;
+        display: block;
+        padding: 0.5rem 1rem;
+        text-decoration: none;
+      }
+      #sidebar a:hover {
+        background-color: #495057;
+      }
+      #content {
+        margin-left: 200px;
+        padding: 1rem;
+      }
+      @media (max-width: 768px) {
         #sidebar {
-            min-height: 100vh;
-            width: 200px;
-            background-color: #343a40;
-            color: white;
-            padding-top: 1rem;
+          position: fixed;
+          left: -200px;
+          transition: left 0.3s;
         }
-        #sidebar a {
-            color: white;
-            display: block;
-            padding: 0.5rem 1rem;
-            text-decoration: none;
-        }
-        #sidebar a:hover {
-            background-color: #495057;
+        #sidebar.show {
+          left: 0;
         }
         #content {
-            margin-left: 200px;
-            padding: 1rem;
+          margin-left: 0;
         }
-        @media (max-width: 768px) {
-            #sidebar {
-                position: fixed;
-                left: -200px;
-                transition: left 0.3s;
-            }
-            #sidebar.show {
-                left: 0;
-            }
-            #content {
-                margin-left: 0;
-            }
-        }
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-dark bg-dark">
+      <button class="btn btn-outline-light me-2" id="toggleSidebar">☰</button>
+      <span class="navbar-brand mb-0 h1">MyApp</span>
+      <button class="btn btn-danger ms-auto" id="logoutBtn">Logout</button>
+    </nav>
 
-<!-- Navbar -->
-<nav class="navbar navbar-dark bg-dark">
-    <button class="btn btn-outline-light me-2" id="toggleSidebar">☰</button>
-    <span class="navbar-brand mb-0 h1">MyApp</span>
-    <button class="btn btn-danger ms-auto" id="logoutBtn">Logout</button>
-</nav>
+    <!-- Sidebar -->
+    <div id="sidebar">
+      <a href="#">Dashboard</a>
+      <a href="/userdetail.html">User Detail</a>
+      <a href="#">Reports</a>
+      <a href="#">Settings</a>
+    </div>
 
-<!-- Sidebar -->
-<div id="sidebar">
-    <a href="#">Dashboard</a>
-    <a href="/UserDetail.html">User Detail</a>
-    <a href="#">Reports</a>
-    <a href="#">Settings</a>
-</div>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="fetchwrapper.js"></script>
+    <script>
+      const sidebar = document.getElementById("sidebar");
+      const toggleBtn = document.getElementById("toggleSidebar");
 
-<!-- Bootstrap JS -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-<script src="fetchWrapper.js"></script>
-<script>
-    const sidebar = document.getElementById('sidebar');
-    const toggleBtn = document.getElementById('toggleSidebar');
+      toggleBtn.addEventListener("click", function () {
+        sidebar.classList.toggle("show");
+      });
 
-    toggleBtn.addEventListener('click', function () {
-        sidebar.classList.toggle('show');
-    });
-
-    const logoutBtn = document.querySelector("#logoutBtn");
-    logoutBtn.addEventListener("click",async function(){
+      const logoutBtn = document.querySelector("#logoutBtn");
+      logoutBtn.addEventListener("click", async function () {
         try {
-            await fetchWrapper("http://localhost:5116/api/Authentication/logout", {
-                method: "POST",
-                credentials: "include"
-            });
-            window.location.href = "LoginIndex.html";
+          await fetchWrapper(
+            "https://jwtauthenticationbackend-production.up.railway.app/api/Authentication/logout",
+            {
+              method: "POST",
+              credentials: "include",
+            },
+          );
+          window.location.href = "index.html";
         } catch (error) {
-            console.error("Logout failed:", error);
-            alert("Logout failed: " + error.message);
+          console.error("Logout failed:", error);
+          alert("Logout failed: " + error.message);
         }
-    });
-</script>
-
-</body>
+      });
+    </script>
+  </body>
 </html>
