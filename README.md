@@ -26,7 +26,7 @@ Here're some of the project's best features:
 *   Users can securely log out, which revokes the Refresh Token and removes the Access Token from localStorage.
 *  The interface features a responsive Bootstrap-based sidebar layout with notification alerts powered by Notyf toastr.
 
- h2>💻 Built with</h2>
+ <h2>💻 Built with</h2>
 
 Technologies used in the project:
 
