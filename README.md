@@ -1,5 +1,7 @@
 <h1 align="center" id="title">JWT Authentication Frontend (HTML CSS JavaScript)</h1>
 
+![LoginPage_Frontend](https://socialify.git.ci/Sailesh-Maharjan/LoginPage_Frontend/image?custom_language=JavaScript&description=1&font=Inter&language=1&logo=https%3A%2F%2Fjwt.io%2Fimg%2Fpic_logo.svg&name=1&pattern=Solid&theme=Dark)
+
 <p id="description">
 A JWT Authentication Frontend is built using HTML, CSS, JavaScript, and Bootstrap 5 that integrates with a JWT_Authentication_Backend Web API . It implements secure authentication using a short-lived Access Token stored in localStorage and a rotating Refresh Token stored securely in an HttpOnly cookie. When the Access Token expires, a new one is automatically generated using the rotating Refresh Token. The application also supports protected API calls using a custom fetch wrapper, along with Login, Registration, and secure Logout with token revocation.
 </p>
@@ -60,4 +62,9 @@ Technologies used in the project:
   ![Index](Screenshots/home.png) 
   ![UserDetail](Screenshots/userdetail.png) 
 
+<h2>🛡️ Further Improvement </h2>
+
+* Instead of storing the access token in localStorage, it can be stored in an HttpOnly cookie so the browser automatically sends it with requests and prevents JavaScript access.
+* Since cookies are vulnerable to CSRF attacks, the access token can alternatively be stored in JavaScript memory, requiring token re-generation after each page refresh for enhanced security.
+* can implement role-based authorization (RBAC).
 
