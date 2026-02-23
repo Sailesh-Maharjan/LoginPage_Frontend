@@ -58,5 +58,6 @@ Technologies used in the project:
 
   ###  After Login Success
   ![Index](Screenshots/home.png) 
+  ![UserDetail](Screenshots/userdetail.png) 
 
 
