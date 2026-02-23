@@ -25,3 +25,14 @@ Here're some of the project's best features:
 *   All protected API calls are managed through a custom fetch wrapper that attaches the Authorization header
 *   Users can securely log out, which revokes the Refresh Token and removes the Access Token from localStorage.
 *  The interface features a responsive Bootstrap-based sidebar layout with notification alerts powered by Notyf toastr.
+
+ h2>💻 Built with</h2>
+
+Technologies used in the project:
+
+*   HTML5
+*   CSS3
+*   JavaScript (ES6)
+*   Notyf (Toastr library)
+*   Bootstrap 5
+*   Netlify Platform (Deployment)
