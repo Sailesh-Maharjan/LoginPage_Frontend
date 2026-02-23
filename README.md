@@ -36,3 +36,31 @@ Technologies used in the project:
 *   Notyf (Toastr library)
 *   Bootstrap 5
 *   Netlify Platform (Deployment)
+
+ <h2>Project Screenshots:</h2>
+
+  ### Login
+  ![Login](Screenshots/Login-ui.png) 
+  
+  ### Registration
+  ![Register](Screenshots/register.png)
+
+  ###  Login Attempts
+  ![LoginAttempt](Screenshots/login-attempt.png) 
+
+  ###  Rate Limit Exceeded
+  ![RateLimitExceed](Screenshots/rate-limit-exceeded.png) 
+
+  ![TooManyAttempts](Screenshots/toomany-attempt.png) 
+
+  ###  Temporary Blocked IP
+  ![TemporaryBlockedIP](Screenshots/temporary-blocked.png) 
+
+  ###  After Login Success
+  ![RevokeToken](Screenshots/token-revoked.png) 
+
+   ###  Logout 
+  ![Logout](Screenshots/logout.png) 
+  
+  ###  Redis Insight Screenshots
+  ![Redis](Screenshots/redis-insight.png) 
