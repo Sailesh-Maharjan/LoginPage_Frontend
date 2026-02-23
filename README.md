@@ -14,7 +14,7 @@ A JWT Authentication Frontend is built using HTML, CSS, JavaScript, and Bootstra
 
 <h2>🚀 Demo</h2>
 
-**Base URL :**  https://loginpage-frontend-sailesh.netlify
+**Base URL :**  https://loginpage-frontend-sailesh.netlify.app
 
 <h2>🧐 Features</h2>
 
