@@ -57,10 +57,6 @@ Technologies used in the project:
   ![TemporaryBlockedIP](Screenshots/temporary-blocked.png) 
 
   ###  After Login Success
-  ![RevokeToken](Screenshots/token-revoked.png) 
+  ![Index](Screenshots/home.png) 
 
-   ###  Logout 
-  ![Logout](Screenshots/logout.png) 
-  
-  ###  Redis Insight Screenshots
-  ![Redis](Screenshots/redis-insight.png) 
+
