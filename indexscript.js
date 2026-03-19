@@ -30,7 +30,7 @@ loginForm.addEventListener("submit", async function (e) {
     }
 
     const responseObj = await fetch(
-      "https://jwtauthenticationbackend-production.up.railway.app/api/Authentication/login",
+      "https://jwt-authentication-backend-e5ec.onrender.com/api/Authentication/login",
       {
         method: "POST",
         credentials: "include",
@@ -65,7 +65,7 @@ loginForm.addEventListener("submit", async function (e) {
     // localStorage.setItem("tokenExpiry", res.data.accessTokenExpires);
     // localStorage.setItem("user",JSON.stringify(res.data.user));
     notyf.success("Login successful!");
-    setTimeout(function(){
+    setTimeout(function () {
       window.location.href = "/Home.html";
     }, 1000);
   } catch (err) {
@@ -92,20 +92,23 @@ registerForm.addEventListener("submit", function (e) {
     return;
   }
 
-  fetch("https://jwtauthenticationbackend-production.up.railway.app/api/Authentication/register", {
-    method: "POST",
-    credentials: "include",
-    headers: {
-      "content-type": "application/json",
+  fetch(
+    "https://jwt-authentication-backend-e5ec.onrender.com/api/Authentication/register",
+    {
+      method: "POST",
+      credentials: "include",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify({
+        firstName: firstName,
+        middleName: middleName,
+        lastName: lastName,
+        email: email,
+        password: password,
+      }),
     },
-    body: JSON.stringify({
-      firstName: firstName,
-      middleName: middleName,
-      lastName: lastName,
-      email: email,
-      password: password,
-    }),
-  })
+  )
     .then((res) => {
       if (!res.ok) {
         return res.json().then((err) => {

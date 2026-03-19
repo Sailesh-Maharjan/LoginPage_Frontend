@@ -1,7 +1,7 @@
 async function refreshAccessToken() {
   try {
     const responseObj = await fetch(
-      "https://jwtauthenticationbackend-production.up.railway.app/api/refresh-token",
+      "https://jwt-authentication-backend-e5ec.onrender.com/api/refresh-token",
       {
         method: "POST",
         credentials: "include",
@@ -28,7 +28,7 @@ async function revokeToken() {
   try {
     localStorage.removeItem("accessToken");
     const responseObj = await fetch(
-      "https://jwtauthenticationbackend-production.up.railway.app/api/revoke-token",
+      "https://jwt-authentication-backend-e5ec.onrender.com/api/revoke-token",
       {
         method: "POST",
         credentials: "include",
